@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everclear 環保染色方案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f766e 0%, #0369a1 100%);
+        }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #0f766e;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <!-- Logo SVG -->
+                    <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <span class="font-bold text-xl text-teal-800 tracking-tight">Everclear</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#intro" class="text-slate-600 hover:text-teal-600 font-medium transition">產品介紹</a>
+                    <a href="#colors" class="text-slate-600 hover:text-teal-600 font-medium transition">專屬色卡</a>
+                    <a href="#calculator" class="text-slate-600 hover:text-teal-600 font-medium transition">化驗室計算機</a>
+                    <a href="#qa" class="text-slate-600 hover:text-teal-600 font-medium transition">常見問答</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="intro" class="gradient-bg text-white pt-32 pb-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-teal-800/50 text-teal-100 text-sm font-semibold mb-6 border border-teal-500/30">革命性紡織染色技術</span>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                Everclear 環保染色方案
+            </h1>
+            <p class="text-lg md:text-2xl text-teal-100 mb-12 max-w-3xl mx-auto font-light">
+                打破傳統限制，實現真正的無鹽染色。以科技力量重塑紡織未來，為地球省下每一滴水與資源。
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition cursor-default">
+                    <div class="text-3xl mb-2">🚫🧂</div>
+                    <div class="font-bold text-lg">免中性鹽</div>
+                    <div class="text-xs text-teal-100 mt-1">完全無鹽/低鹽染色</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition cursor-default">
+                    <div class="text-3xl mb-2">💧</div>
+                    <div class="font-bold text-lg">節水 40%</div>
+                    <div class="text-xs text-teal-100 mt-1">大幅減少清洗用水</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition cursor-default">
+                    <div class="text-3xl mb-2">📈</div>
+                    <div class="font-bold text-lg">高固色率 >95%</div>
+                    <div class="text-xs text-teal-100 mt-1">殘液極清澈，染料高利用</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition cursor-default">
+                    <div class="text-3xl mb-2">🌍</div>
+                    <div class="font-bold text-lg">減碳 72%</div>
+                    <div class="text-xs text-teal-100 mt-1">縮短工時 35%，降低能耗</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Card Section -->
+    <section id="colors" class="py-20 bg-white relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">專屬完整色卡 (Color Card)</h2>
+                <p class="text-slate-600">Everclear 系統涵蓋完整色譜，根據不同系列有其專屬的建議濃度與最佳染色溫度</p>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-cyan-800 mb-6 border-b-2 border-cyan-100 pb-2">
+                    Everclear s/p 系列 <span class="text-sm font-normal text-slate-500 ml-2">(最佳染色溫度 60°C)</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition transform hover:-translate-y-1 bg-slate-50">
+                        <div class="h-32 bg-[#DAA520] w-full"></div>
+                        <div class="p-4">
+                            <div class="font-bold text-slate-800">Everclear Yellow s/p</div>
+                            <div class="text-xs text-slate-500 mt-1">建議濃度: 2.0% ~ 6.0%</div>
+                            <div class="text-sm text-slate-600 mt-2">飽滿金黃，適合中深色</div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition transform hover:-translate-y-1 bg-slate-50">
+                        <div class="h-32 bg-[#DC143C] w-full"></div>
+                        <div class="p-4">
+                            <div class="font-bold text-slate-800">Everclear Red s/p</div>
+                            <div class="text-xs text-slate-500 mt-1">建議濃度: 2.0% ~ 6.0%</div>
+                            <div class="text-sm text-slate-600 mt-2">深邃緋紅，高固色率</div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition transform hover:-translate-y-1 bg-slate-50">
+                        <div class="h-32 bg-[#000080] w-full"></div>
+                        <div class="p-4">
+                            <div class="font-bold text-slate-800">Everclear Blue s/p</div>
+                            <div class="text-xs text-slate-500 mt-1">建議濃度: 2.0% ~ 6.0%</div>
+                            <div class="text-sm text-slate-600 mt-2">特深海軍藍，層次豐富</div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition transform hover:-translate-y-1 bg-slate-800">
+                        <div class="h-32 bg-[#0f0f0f] w-full border-b border-slate-700"></div>
+                        <div class="p-4">
+                            <div class="font-bold text-teal-400">Everclear Black Deep s/p</div>
+                            <div class="text-xs text-slate-300 mt-1">極深色濃度: 4.0% ~ 7.0%</div>
+                            <div class="text-sm text-slate-400 mt-2">專為極度深黑設計</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-teal-800 mb-6 border-b-2 border-teal-100 pb-2">
+                    Everclear 一般系列 <span class="text-sm font-normal text-slate-500 ml-2">(最佳染色溫度 80°C)</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition transform hover:-translate-y-1">
+                        <div class="h-32 bg-[#FFD700] w-full"></div>
+                        <div class="p-4 bg-slate-50">
+                            <div class="font-bold text-slate-800">Everclear Yellow</div>
+                            <div class="text-xs text-slate-500 mt-1">建議濃度: 0.7% ~ 4.0%</div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition transform hover:-translate-y-1">
+                        <div class="h-32 bg-[#EE2C2C] w-full"></div>
+                        <div class="p-4 bg-slate-50">
+                            <div class="font-bold text-slate-800">Everclear Red</div>
+                            <div class="text-xs text-slate-500 mt-1">建議濃度: 0.7% ~ 4.0%</div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition transform hover:-translate-y-1">
+                        <div class="h-32 bg-[#1C86EE] w-full"></div>
+                        <div class="p-4 bg-slate-50">
+                            <div class="font-bold text-slate-800">Everclear Blue</div>
+                            <div class="text-xs text-slate-500 mt-1">建議濃度: 0.7% ~ 4.0%</div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-lg transition transform hover:-translate-y-1">
+                        <div class="h-32 bg-[#222222] w-full"></div>
+                        <div class="p-4 bg-slate-50">
+                            <div class="font-bold text-slate-800">Everclear Black</div>
+                            <div class="text-xs text-slate-500 mt-1">建議濃度: 0.7% ~ 4.0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-20 bg-slate-50 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">化驗室計算機 (CSE Calculator)</h2>
+                <p class="text-slate-600">快速計算 Evertex CA-02 陽離子助劑與 NaOH 的精確用量。</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100">
+                <form id="cse-form" class="grid md:grid-cols-2 gap-8 mb-10">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">染料系列 (Dye Series)</label>
+                        <select id="dye-series" class="w-full border-slate-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 bg-slate-50 p-3 border outline-none">
+                            <option value="everclear">Everclear (一般系列)</option>
+                            <option value="everclear-sp">Everclear s/p (中深色系列)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">染料濃度 (Dye Depth, B%)</label>
+                        <input type="number" id="dye-depth" step="0.1" min="0" value="4.0" class="w-full border-slate-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 bg-slate-50 p-3 border outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">壓吸率 (Pick-up Rate, F%)</label>
+                        <input type="number" id="pickup-rate" step="1" min="1" value="100" class="w-full border-slate-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 bg-slate-50 p-3 border outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">棉材質 (Cotton Type)</label>
+                        <select id="cotton-type" class="w-full border-slate-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 bg-slate-50 p-3 border outline-none">
+                            <option value="normal">一般未絲光棉 (Normal)</option>
+                            <option value="mercerized">絲光棉 (Mercerized)</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-slate-700 mb-2">片鹼濃度 (NaOH Concentration, G%)</label>
+                        <select id="naoh-conc" class="w-full md:w-1/2 border-slate-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 bg-slate-50 p-3 border outline-none">
+                            <option value="50">50% (液鹼)</option>
+                            <option value="98">98% (固體片鹼)</option>
+                        </select>
+                    </div>
+                </form>
+
+                <div class="bg-gradient-to-r from-teal-800 to-cyan-700 rounded-2xl p-8 text-white text-center shadow-lg">
+                    <h3 class="text-xl font-semibold mb-6 text-teal-100">建議配方用量 (Recommended Dosage)</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                            <div class="text-teal-200 text-sm mb-2">Evertex CA-02 用量</div>
+                            <div class="flex items-baseline justify-center gap-2">
+                                <span id="ca02-result" class="text-5xl font-black text-white">0.00</span>
+                                <span class="text-xl font-medium text-teal-200">g/L</span>
+                            </div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                            <div class="text-cyan-200 text-sm mb-2">NaOH 用量</div>
+                            <div class="flex items-baseline justify-center gap-2">
+                                <span id="naoh-result" class="text-5xl font-black text-white">0.00</span>
+                                <span class="text-xl font-medium text-cyan-200">g/L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A Section -->
+    <section id="qa" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">全部常見問答 (Complete Q&A)</h2>
+                <p class="text-slate-600">掌握 Everclear 無鹽染色的核心技術、環保效益與操作細節</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <details class="group bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-100 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-slate-800 cursor-pointer list-none">
+                        <span>1. 為什麼 Everclear 染色不需要加鹽 (芒硝/食鹽)？</span>
+                        <span class="transition-transform group-open:rotate-180 text-teal-600">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 mt-4 leading-relaxed pl-4 border-l-4 border-teal-500">
+                        透過專利的 Evertex CA-02 進行陽離子化前處理，棉纖維會帶有強烈的正電荷。因為染料本身帶負電，透過正負相吸的強烈引力，染料能自動且迅速地吸附到纖維上，因此完全免除芒硝或食鹽等中性鹽促染劑的使用。
+                    </div>
+                </details>
+
+                <!-- Q2 -->
+                <details class="group bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-100 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-slate-800 cursor-pointer list-none">
+                        <span>2. Everclear 方案主要的環保與節能數據為何？</span>
+                        <span class="transition-transform group-open:rotate-180 text-teal-600">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 mt-4 leading-relaxed pl-4 border-l-4 border-teal-500">
+                        相較於傳統反應性染色，Everclear 方案的具體效益包含：<br>
+                        • <strong>免中性鹽</strong>：省下 100% 的鹽用量 (傳統每噸布需 640kg 鹽)。<br>
+                        • <strong>節水與廢水優化</strong>：整體節水達 40%，COD 降低 82%，廢水色度大幅降低 95% (固色率 >95%)。<br>
+                        • <strong>節能減碳</strong>：因免除多道高溫水洗 (僅需 30°C 冷水洗)，可節省蒸氣消耗 85%、節電 35%、縮短總工時 35%，最終減少二氧化碳排放量達 72%。
+                    </div>
+                </details>
+
+                <!-- Q3 -->
+                <details class="group bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-100 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-slate-800 cursor-pointer list-none">
+                        <span>3. Everclear 與 Everclear s/p 系列的溫度控制有何不同？</span>
+                        <span class="transition-transform group-open:rotate-180 text-teal-600">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 mt-4 leading-relaxed pl-4 border-l-4 border-teal-500">
+                        兩者的最佳固色溫度不同：<br>
+                        • <strong>Everclear 一般系列</strong>：浸染固色溫度為 <strong>80°C</strong>。<br>
+                        • <strong>Everclear s/p (及 Deep s/p) 系列</strong>：專屬固色溫度為 <strong>60°C</strong>。<br>
+                        請特別注意，不論哪個系列，浸染時的升溫速率皆需嚴格控制在 <strong>≤ 1.5°C/min</strong> 以確保優異的均染性。
+                    </div>
+                </details>
+
+                <!-- Q4 -->
+                <details class="group bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-100 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-slate-800 cursor-pointer list-none">
+                        <span>4. 請問 Everclear 和 Everclear s/p 系列的染料可以互相混用嗎？</span>
+                        <span class="transition-transform group-open:rotate-180 text-teal-600">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 mt-4 leading-relaxed pl-4 border-l-4 border-red-500">
+                        <strong>絕對不可以混用！</strong><br>
+                        因為這兩個系列的染料反應基特性與最佳固色溫度 (80°C vs 60°C) 完全不同。若強行混用，將導致固色率大幅低落、產生嚴重色差，且顏色重現性極差。
+                    </div>
+                </details>
+
+                <!-- Q5 -->
+                <details class="group bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-100 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-slate-800 cursor-pointer list-none">
+                        <span>5. CPB 陽離子化的打卷熟成條件 (Batching conditions) 為何？</span>
+                        <span class="transition-transform group-open:rotate-180 text-teal-600">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 mt-4 leading-relaxed pl-4 border-l-4 border-teal-500">
+                        使用冷壓染機 (CPB) 壓吸 Evertex CA-02 混合液後：<br>
+                        • <strong>溫度與時間</strong>：建議將布匹放置於 <strong>25-30°C</strong> 的環境中熟成 <strong>17-20 小時</strong>。若廠房溫度偏低 (20-24°C)，需延長至 20-24 小時。<br>
+                        • <strong>隔絕保護</strong>：熟成期間務必使用塑膠膜完整包覆，隔絕空氣流動以防止布邊風乾或與空氣中的二氧化碳作用產生鹼斑，以確保陽離子化均勻。
+                    </div>
+                </details>
+
+                <!-- Q6 -->
+                <details class="group bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-100 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-slate-800 cursor-pointer list-none">
+                        <span>6. 如果染色出現異常，Everclear 的剝色 (Stripping) 與修色程序是什麼？</span>
+                        <span class="transition-transform group-open:rotate-180 text-teal-600">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 mt-4 leading-relaxed pl-4 border-l-4 border-teal-500">
+                        • <strong>輕度剝色 (<10%)</strong>：可使用兩性界面活性劑於 95°C 處理 30 分鐘。<br>
+                        • <strong>重度剝色 (>50%)</strong>：需使用雙氧水 (氧化性) 或保險粉 (還原性) 搭配 NaOH 進行高溫高鹼剝色。<br>
+                        • <strong>修色須知</strong>：無論何種剝色，後續的修色或重染<strong>必須從常溫 (30°C 以下)、完全無鹼的水浴重新開始</strong>，不可直接在高溫或含鹼狀態下加染料。
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <span class="font-bold text-xl text-slate-200 tracking-tight">Everclear</span>
+            </div>
+            <p class="mb-4">創新・環保・永續發展的染色解決方案</p>
+            <p class="text-sm opacity-60">© 2026 Everclear Eco-Dyeing Solution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formElements = [
+                document.getElementById('dye-series'),
+                document.getElementById('dye-depth'),
+                document.getElementById('pickup-rate'),
+                document.getElementById('cotton-type'),
+                document.getElementById('naoh-conc')
+            ];
+
+            const ca02ResultDisplay = document.getElementById('ca02-result');
+            const naohResultDisplay = document.getElementById('naoh-result');
+
+            function calculateCSE() {
+                const series = document.getElementById('dye-series').value;
+                const B = parseFloat(document.getElementById('dye-depth').value) || 0;
+                const F = parseFloat(document.getElementById('pickup-rate').value) || 100;
+                const cotton = document.getElementById('cotton-type').value;
+                const G = parseFloat(document.getElementById('naoh-conc').value) || 100; // prevent division by zero
+
+                let ca02_base = 0;
+                
+                // Base formula depending on dye series
+                if (series === 'everclear') {
+                    ca02_base = (0.0074 * Math.pow(B, 3) + 2.4242 * Math.pow(B, 2) + 9.4034 * B + 8.9145) * 1.25 * (100 / F);
+                } else if (series === 'everclear-sp') {
+                    ca02_base = (0.1453 * Math.pow(B, 3) + 0.1894 * Math.pow(B, 2) + 9.3444 * B + 6.815) * 1.25 * (100 / F);
+                }
+
+                // Adjust for Mercerized cotton
+                let ca02_result = (cotton === 'mercerized') ? (ca02_base * 0.9) : ca02_base;
+                
+                // Calculate NaOH amount based on exact formula
+                let naoh_result = (ca02_result * 0.5 * 5 * 40 * 100) / (418 * G);
+
+                // Display formatting (show minimum 2 decimal points for precision)
+                ca02ResultDisplay.textContent = ca02_result.toFixed(2);
+                naohResultDisplay.textContent = naoh_result.toFixed(2);
+            }
+
+            // Attach listeners to trigger dynamic calculation whenever inputs change
+            formElements.forEach(el => {
+                if(el) {
+                    el.addEventListener('input', calculateCSE);
+                    el.addEventListener('change', calculateCSE);
+                }
+            });
+
+            // Run initial calculation to populate default values (e.g. 4.0% dye depth)
+            calculateCSE();
+        });
+    </script>
+</body>
+</html>
